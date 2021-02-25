@@ -1,0 +1,21 @@
+<%= form_for @school do |f| %>
+
+
+<table class="new_form">
+
+  <tr>
+    <td><%= f.label :name %></td>
+    <td><%= f.text_field :name %></td>
+  </tr>
+
+  <tr>
+    <td><%= f.label :curriculum %></td>
+    <td><%= f.text_field :curriculum %></td>
+  </tr>
+  <tr>
+    <td><%= submit_tag "Create School" %></td>
+
+  </tr>
+</table>
+
+<% end %>

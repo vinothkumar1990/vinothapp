@@ -1,0 +1,13 @@
+<%= form_for @standard do |f| %>
+<%= hidden_field_tag "standard[school_id]",params[:school_id] %>
+<table>
+  <tr>
+    <td><label>Standard Name</label></td>
+
+    <td><%= f.text_field :name %></td>
+  </tr>
+  <tr>
+    <td><%= submit_tag "Create Standard"%></td>
+  </tr>
+</table>
+<% end %>

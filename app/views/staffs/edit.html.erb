@@ -1,0 +1,21 @@
+<%= form_for :staff, url: staff_path(@staff), method: :patch do |f| %>
+<%= hidden_field_tag "staff[school_id]",params[:school_id] %>
+<table>
+  <tr>
+    <td class="lab"><label>Name</label></td>
+
+    <td><%= f.text_field :name %></td>
+    
+  </tr>
+<tr>
+   <td> <label>Position</label></td>
+    <td><%= select_tag("staff[position]", options_for_select([  ['Teaching', 'Teaching'],['Non Teaching', 'Non Teaching']], @staff.position)) %></td>
+    
+
+  </tr>
+ <tr>
+    <td><%= f.submit "Update"%></td>
+ 
+  </tr>
+</table>
+<% end %>

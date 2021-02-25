@@ -1,0 +1,18 @@
+<%= form_for(@staff) do |f| %>
+<%= hidden_field_tag "staff[school_id]",params[:school_id] %>
+<table>
+  <tr>
+    <td><label>Name</label></td>
+
+    <td><%#= f.text_field :name %></td>
+  </tr>
+    <tr>
+    <td><label>Position</label></td>
+
+    <td><%#= select_tag("staff[position]", options_for_select([ ['Teaching', 'Teaching'], ['Non Teaching', 'Non Teaching']])) %></td>
+  </tr>
+  <tr>
+    <td><%= submit_tag "Create Staff"%></td>
+  </tr>
+</table>
+<% end %>

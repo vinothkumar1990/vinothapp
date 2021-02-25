@@ -1,0 +1,15 @@
+<table>
+ <tr>
+    <th>Name</th>
+    <th>Position</th>
+  </tr>
+
+  <% @staffs.each do |s,i| %>
+    <tr>
+      
+     <td><%= s.name %></td>
+      <td><%= s.position %></td>
+    </tr>
+  <% end %>
+
+</table>

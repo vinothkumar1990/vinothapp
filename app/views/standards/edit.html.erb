@@ -1,0 +1,15 @@
+<%= form_for :standard, url: standard_path(@standard), method: :patch do |f| %>
+<%= hidden_field_tag "standard[school_id]",params[:school_id] %>
+<table>
+  <tr>
+    <td class="lab"><label>Name</label></td>
+
+    <td><%= f.text_field :name %></td>
+    
+  </tr>
+ <tr>
+    <td><%= f.submit "Update"%></td>
+ 
+  </tr>
+</table>
+<% end %>

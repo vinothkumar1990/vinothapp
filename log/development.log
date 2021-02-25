@@ -1,0 +1,1127 @@
+  [1m[36m (139.6ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (0.2ms)[0m  select sqlite_version(*)
+  [1m[36m (132.8ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to CreateSchools (20210224074750)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  CREATE TABLE "schools" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "curriculum" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20210224074750"]]
+  [1m[35m (161.0ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+
+
+Started GET "/" for 127.0.0.1 at 2021-02-24 13:34:25 +0530
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendered /usr/lib/ruby/vendor_ruby/rails/templates/rails/welcome/index.html.erb (2.7ms)
+Completed 200 OK in 142ms (Views: 74.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/schools/new" for 127.0.0.1 at 2021-02-24 13:42:46 +0530
+Processing by SchoolsController#new as HTML
+  Rendered schools/new.html.erb within layouts/application (701.7ms)
+Completed 500 Internal Server Error in 731ms (ActiveRecord: 0.8ms)
+
+ActionView::Template::Error (undefined method `old_amound' for #<School:0x0000000478b870>):
+    15: 
+    16: <tr>
+    17:     <td class="lab"><%= f.label :old_amound %></td>
+    18:     <td><%= f.text_field :old_amound %></td>
+    19:   </tr>
+    20:   <tr>
+    21:     <td><%= submit_tag "Create School" %></td>
+  app/views/schools/new.html.erb:18:in `block in _app_views_schools_new_html_erb__4267542933002942132_37261200'
+  app/views/schools/new.html.erb:1:in `_app_views_schools_new_html_erb__4267542933002942132_37261200'
+
+
+  Rendered /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/templates/rescues/_source.erb (9.4ms)
+  Rendered /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.2ms)
+  Rendered /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (42.9ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.7ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.7ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (21.3ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.6ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (50.5ms)
+
+
+Started GET "/schools/new" for 127.0.0.1 at 2021-02-24 13:43:22 +0530
+Processing by SchoolsController#new as HTML
+  Rendered schools/new.html.erb within layouts/application (5.1ms)
+Completed 200 OK in 3180ms (Views: 3178.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/schools.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2021-02-24 13:43:26 +0530
+
+
+Started GET "/assets/schools.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2021-02-24 13:43:26 +0530
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2021-02-24 13:43:26 +0530
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for 127.0.0.1 at 2021-02-24 13:43:26 +0530
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for 127.0.0.1 at 2021-02-24 13:43:26 +0530
+
+
+Started GET "/assets/turbolinks.self-569ee74eaa15c1e2019317ff770b8769b1ec033a0f572a485f64c82ddc8f989e.js?body=1" for 127.0.0.1 at 2021-02-24 13:43:26 +0530
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2021-02-24 13:43:26 +0530
+
+
+Started POST "/schools" for 127.0.0.1 at 2021-02-24 13:43:48 +0530
+Processing by SchoolsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"c00FFs7brVhW2soIXKXlsdFN7x49QS5YqHKGvLNV5H99DoykCOYsdk0Z9gL9dUJWXaOUockwuXIN3WMvkCAlGg==", "school"=>{"name"=>"Govt school", "curriculum"=>"chennai"}, "commit"=>"Create School"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (442.1ms)[0m  [1mINSERT INTO "schools" ("name", "curriculum", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Govt school"], ["curriculum", "chennai"], ["created_at", "2021-02-24 08:13:48.741764"], ["updated_at", "2021-02-24 08:13:48.741764"]]
+  [1m[35m (126.6ms)[0m  commit transaction
+Redirected to http://localhost:3000/schools/1
+Completed 302 Found in 666ms (ActiveRecord: 568.8ms)
+
+
+Started GET "/schools/1" for 127.0.0.1 at 2021-02-24 13:43:49 +0530
+Processing by SchoolsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSchool Load (0.5ms)[0m  [1mSELECT  "schools".* FROM "schools" WHERE "schools"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered schools/show.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 101ms (Views: 46.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/schools" for 127.0.0.1 at 2021-02-24 13:43:54 +0530
+Processing by SchoolsController#index as HTML
+  Rendered schools/index.html.erb within layouts/application (7.6ms)
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    4:     <th>curriculum</th>
+    5:   </tr>
+    6: 
+    7:   <% @schools.each do |school| %>
+    8:     <tr>
+    9:       <td><%= school.name %></td>
+   10:       <td><%= moi.curriculum %></td>
+  app/views/schools/index.html.erb:7:in `_app_views_schools_index_html_erb__1415391459222858929_43631640'
+
+
+  Rendered /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/templates/rescues/_source.erb (7.8ms)
+  Rendered /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.5ms)
+  Rendered /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (27.4ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.6ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (19.6ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.6ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (40.8ms)
+
+
+Started GET "/schools" for 127.0.0.1 at 2021-02-24 13:44:37 +0530
+Processing by SchoolsController#index as HTML
+  [1m[35mSchool Load (1.4ms)[0m  SELECT "schools".* FROM "schools"
+  Rendered schools/index.html.erb within layouts/application (66.9ms)
+Completed 500 Internal Server Error in 79ms (ActiveRecord: 1.7ms)
+
+ActionView::Template::Error (undefined local variable or method `moi' for #<#<Class:0x007fc190767100>:0x007fc19205f068>):
+     7:   <% @schools.each do |school| %>
+     8:     <tr>
+     9:       <td><%= school.name %></td>
+    10:       <td><%= moi.curriculum %></td>
+    11:       <td><%= link_to 'Show', school_path(school) %></td>
+    12:       <td><%= link_to 'Edit', edit_school_path(school) %></td>
+    13:       <td><%= link_to 'Destroy', school_path(school),
+  app/views/schools/index.html.erb:10:in `block in _app_views_schools_index_html_erb__1415391459222858929_43631640'
+  app/views/schools/index.html.erb:7:in `_app_views_schools_index_html_erb__1415391459222858929_43631640'
+
+
+  Rendered /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/templates/rescues/_source.erb (10.8ms)
+  Rendered /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.9ms)
+  Rendered /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.2ms)
+  Rendered /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (33.5ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (1.1ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.7ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (23.2ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (46.2ms)
+
+
+Started GET "/schools" for 127.0.0.1 at 2021-02-24 13:44:59 +0530
+Processing by SchoolsController#index as HTML
+  [1m[36mSchool Load (0.3ms)[0m  [1mSELECT "schools".* FROM "schools"[0m
+  Rendered schools/index.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 25ms (Views: 23.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for 127.0.0.1 at 2021-02-24 13:45:00 +0530
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for 127.0.0.1 at 2021-02-24 13:45:00 +0530
+
+
+Started GET "/assets/turbolinks.self-569ee74eaa15c1e2019317ff770b8769b1ec033a0f572a485f64c82ddc8f989e.js?body=1" for 127.0.0.1 at 2021-02-24 13:45:00 +0530
+
+
+Started GET "/assets/schools.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2021-02-24 13:45:00 +0530
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2021-02-24 13:45:00 +0530
+
+
+Started GET "/schools/1" for 127.0.0.1 at 2021-02-24 13:45:02 +0530
+Processing by SchoolsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mSchool Load (0.3ms)[0m  SELECT  "schools".* FROM "schools" WHERE "schools"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered schools/show.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 19ms (Views: 16.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/schools/1/edit" for 127.0.0.1 at 2021-02-24 13:45:05 +0530
+Processing by SchoolsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSchool Load (0.2ms)[0m  [1mSELECT  "schools".* FROM "schools" WHERE "schools"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered schools/edit.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 71ms (Views: 69.3ms | ActiveRecord: 0.2ms)
+
+
+Started PATCH "/schools/1" for 127.0.0.1 at 2021-02-24 13:45:11 +0530
+Processing by SchoolsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"9afMoPSVmNHOuUV2L69CtbTaoV0hFrUYrJ4bbQOHGs/75EUSMqgZ/9V6eXyOf+VSODTa4tVnIjIJMf7+IPLbqg==", "school"=>{"name"=>"Govt school", "curriculum"=>"pusu"}, "commit"=>"Update", "id"=>"1"}
+  [1m[35mSchool Load (0.1ms)[0m  SELECT  "schools".* FROM "schools" WHERE "schools"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (78.9ms)[0m  UPDATE "schools" SET "curriculum" = ?, "updated_at" = ? WHERE "schools"."id" = ?  [["curriculum", "pusu"], ["updated_at", "2021-02-24 08:15:11.408689"], ["id", 1]]
+  [1m[36m (351.4ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/schools/1
+Completed 302 Found in 438ms (ActiveRecord: 430.5ms)
+
+
+Started GET "/schools/1" for 127.0.0.1 at 2021-02-24 13:45:11 +0530
+Processing by SchoolsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mSchool Load (0.1ms)[0m  SELECT  "schools".* FROM "schools" WHERE "schools"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered schools/show.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 19ms (Views: 17.9ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/schools" for 127.0.0.1 at 2021-02-24 13:45:16 +0530
+Processing by SchoolsController#index as HTML
+  [1m[36mSchool Load (0.3ms)[0m  [1mSELECT "schools".* FROM "schools"[0m
+  Rendered schools/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 24ms (Views: 22.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for 127.0.0.1 at 2021-02-24 13:45:16 +0530
+
+
+Started GET "/assets/turbolinks.self-569ee74eaa15c1e2019317ff770b8769b1ec033a0f572a485f64c82ddc8f989e.js?body=1" for 127.0.0.1 at 2021-02-24 13:45:16 +0530
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for 127.0.0.1 at 2021-02-24 13:45:16 +0530
+
+
+Started GET "/assets/schools.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2021-02-24 13:45:16 +0530
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2021-02-24 13:45:16 +0530
+
+
+Started GET "/schools/1/edit" for 127.0.0.1 at 2021-02-24 13:45:18 +0530
+Processing by SchoolsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mSchool Load (0.2ms)[0m  SELECT  "schools".* FROM "schools" WHERE "schools"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered schools/edit.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 34ms (Views: 31.7ms | ActiveRecord: 0.2ms)
+
+
+Started PATCH "/schools/1" for 127.0.0.1 at 2021-02-24 13:45:23 +0530
+Processing by SchoolsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"cpcl86Yj6m0OZaJgLqAK+DhvcwHdEB4LeKn6X2eVUCZ81KxBYB5rQxWmnmqPcK0ftIEIvilhiSHdBh/MROCRQw==", "school"=>{"name"=>"Govt school", "curriculum"=>"chennai"}, "commit"=>"Update", "id"=>"1"}
+  [1m[36mSchool Load (0.2ms)[0m  [1mSELECT  "schools".* FROM "schools" WHERE "schools"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mUPDATE "schools" SET "curriculum" = ?, "updated_at" = ? WHERE "schools"."id" = ?[0m  [["curriculum", "chennai"], ["updated_at", "2021-02-24 08:15:23.989902"], ["id", 1]]
+  [1m[35m (260.8ms)[0m  commit transaction
+Redirected to http://localhost:3000/schools/1
+Completed 302 Found in 272ms (ActiveRecord: 261.7ms)
+
+
+Started GET "/schools/1" for 127.0.0.1 at 2021-02-24 13:45:24 +0530
+Processing by SchoolsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSchool Load (0.3ms)[0m  [1mSELECT  "schools".* FROM "schools" WHERE "schools"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered schools/show.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 23ms (Views: 20.9ms | ActiveRecord: 0.3ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateStandards (20210224082112)
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (0.6ms)[0m  [1mCREATE TABLE "standards" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "school_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (0.2ms)[0m  [1mCREATE  INDEX "index_standards_on_school_id" ON "standards" ("school_id")[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20210224082112"]]
+  [1m[36m (175.6ms)[0m  [1mcommit transaction[0m
+Migrating to CreateStaffs (20210224082135)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.5ms)[0m  [1mCREATE TABLE "staffs" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "position" varchar, "school_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.2ms)[0m  CREATE  INDEX "index_staffs_on_school_id" ON "staffs" ("school_id")
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20210224082135"]]
+  [1m[35m (151.3ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.3ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_staffs_on_school_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_staffs_on_school_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_standards_on_school_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_standards_on_school_id' AND type='index'
+[0m
+  [1m[36mStandard Load (0.2ms)[0m  [1mSELECT  "standards".* FROM "standards"  ORDER BY "standards"."id" DESC LIMIT 1[0m
+  [1m[35mStaff Load (0.2ms)[0m  SELECT  "staffs".* FROM "staffs"  ORDER BY "staffs"."id" DESC LIMIT 1
+
+
+Started GET "/schools/1/standards/new" for 127.0.0.1 at 2021-02-24 14:15:55 +0530
+  [1m[35mActiveRecord::SchemaMigration Load (0.3ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Processing by StandardsController#new as HTML
+  Parameters: {"school_id"=>"1"}
+  Rendered standards/new.html.erb within layouts/application (32.2ms)
+Completed 500 Internal Server Error in 209ms (ActiveRecord: 0.5ms)
+
+ActionView::Template::Error (undefined method `standards_path' for #<#<Class:0x00000003a29a10>:0x000000039e4b18>):
+    1: <%= form_for(@standard) do |f| %>
+    2: <%= hidden_field_tag "standard[school_id]",params[:school_id] %>
+    3: <table>
+    4:   <tr>
+  app/views/standards/new.html.erb:1:in `_app_views_standards_new_html_erb___4285384368482385046_30308700'
+
+
+  Rendered /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/templates/rescues/_source.erb (9.7ms)
+  Rendered /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.8ms)
+  Rendered /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (35.9ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.7ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (20.7ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.8ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (43.8ms)
+
+
+Started GET "/schools/1/standards/new" for 127.0.0.1 at 2021-02-24 14:17:37 +0530
+Processing by StandardsController#new as HTML
+  Parameters: {"school_id"=>"1"}
+  Rendered standards/new.html.erb within layouts/application (34.4ms)
+Completed 500 Internal Server Error in 38ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error (undefined method `standards_path' for #<#<Class:0x00000003a29a10>:0x007fc19261d978>):
+    1: <%= form_for(@standard) do |f| %>
+    2: <%= hidden_field_tag "standard[school_id]",params[:school_id] %>
+    3: <table>
+    4:   <tr>
+  app/views/standards/new.html.erb:1:in `_app_views_standards_new_html_erb___4285384368482385046_70234680648440'
+
+
+  Rendered /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/templates/rescues/_source.erb (11.8ms)
+  Rendered /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/templates/rescues/_trace.html.erb (6.7ms)
+  Rendered /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (38.3ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.6ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (21.3ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (42.0ms)
+
+
+Started GET "/schools/1/standards/new" for 127.0.0.1 at 2021-02-24 14:18:50 +0530
+Processing by StandardsController#new as HTML
+  Parameters: {"school_id"=>"1"}
+  Rendered standards/new.html.erb within layouts/application (40.5ms)
+Completed 500 Internal Server Error in 45ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error (undefined method `standards_path' for #<#<Class:0x00000003a29a10>:0x00000003ad5ef0>):
+    1: <%= form_for(@standard) do |f| %>
+    2: <%= hidden_field_tag "standard[school_id]",params[:school_id] %>
+    3: <table>
+    4:   <tr>
+  app/views/standards/new.html.erb:1:in `_app_views_standards_new_html_erb___4285384368482385046_30697540'
+
+
+  Rendered /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/templates/rescues/_source.erb (9.6ms)
+  Rendered /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.7ms)
+  Rendered /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (30.9ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (20.4ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (40.2ms)
+
+
+Started GET "/schools/1/standards/new" for 127.0.0.1 at 2021-02-24 14:20:00 +0530
+Processing by StandardsController#new as HTML
+  Parameters: {"school_id"=>"1"}
+  Rendered standards/new.html.erb within layouts/application (35.1ms)
+Completed 500 Internal Server Error in 51ms (ActiveRecord: 0.8ms)
+
+ActionView::Template::Error (undefined method `standards_path' for #<#<Class:0x007fc191b4ca58>:0x007fc191b22ca8>):
+    1: <%= form_for(@stand) do |f| %>
+    2: <%= hidden_field_tag "standard[school_id]",params[:school_id] %>
+    3: <table>
+    4:   <tr>
+  app/views/standards/new.html.erb:1:in `_app_views_standards_new_html_erb___4285384368482385046_70234674863620'
+
+
+  Rendered /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/templates/rescues/_source.erb (9.3ms)
+  Rendered /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/templates/rescues/_trace.html.erb (6.0ms)
+  Rendered /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (32.3ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.7ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (20.0ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.7ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (41.9ms)
+
+
+Started GET "/schools/1/staffs/new" for 127.0.0.1 at 2021-02-24 14:23:45 +0530
+
+SyntaxError (/home/vinoth/Desktop/vinoth/interview/interview_app/app/controllers/staffs_controller.rb:47: syntax error, unexpected keyword_end, expecting end-of-input):
+  app/controllers/staffs_controller.rb:47: syntax error, unexpected keyword_end, expecting end-of-input
+
+
+  Rendered /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/templates/rescues/_source.erb (6.4ms)
+  Rendered /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.5ms)
+  Rendered /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.7ms)
+  Rendered /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (27.3ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.6ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.7ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.7ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (24.7ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (47.3ms)
+
+
+Started GET "/schools/1/staffs/new" for 127.0.0.1 at 2021-02-24 14:24:14 +0530
+Processing by StaffsController#new as HTML
+  Parameters: {"school_id"=>"1"}
+Completed 500 Internal Server Error in 40ms (ActiveRecord: 1.2ms)
+
+ActionView::MissingTemplate (Missing template staffs/new, application/new with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:erb, :builder, :raw, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/home/vinoth/Desktop/vinoth/interview/interview_app/app/views"
+):
+  /usr/lib/ruby/vendor_ruby/action_view/path_set.rb:46:in `find'
+  /usr/lib/ruby/vendor_ruby/action_view/lookup_context.rb:121:in `find'
+  /usr/lib/ruby/vendor_ruby/action_view/renderer/abstract_renderer.rb:18:in `find_template'
+  /usr/lib/ruby/vendor_ruby/action_view/renderer/template_renderer.rb:40:in `determine_template'
+  /usr/lib/ruby/vendor_ruby/action_view/renderer/template_renderer.rb:8:in `render'
+  /usr/lib/ruby/vendor_ruby/action_view/renderer/renderer.rb:46:in `render_template'
+  /usr/lib/ruby/vendor_ruby/action_view/renderer/renderer.rb:27:in `render'
+  /usr/lib/ruby/vendor_ruby/action_view/rendering.rb:100:in `_render_template'
+  /usr/lib/ruby/vendor_ruby/action_controller/metal/streaming.rb:217:in `_render_template'
+  /usr/lib/ruby/vendor_ruby/action_view/rendering.rb:83:in `render_to_body'
+  /usr/lib/ruby/vendor_ruby/action_controller/metal/rendering.rb:32:in `render_to_body'
+  /usr/lib/ruby/vendor_ruby/action_controller/metal/renderers.rb:37:in `render_to_body'
+  /usr/lib/ruby/vendor_ruby/abstract_controller/rendering.rb:25:in `render'
+  /usr/lib/ruby/vendor_ruby/action_controller/metal/rendering.rb:16:in `render'
+  /usr/lib/ruby/vendor_ruby/action_controller/metal/instrumentation.rb:44:in `block (2 levels) in render'
+  /usr/lib/ruby/vendor_ruby/active_support/core_ext/benchmark.rb:12:in `block in ms'
+  /usr/lib/ruby/2.3.0/benchmark.rb:308:in `realtime'
+  /usr/lib/ruby/vendor_ruby/active_support/core_ext/benchmark.rb:12:in `ms'
+  /usr/lib/ruby/vendor_ruby/action_controller/metal/instrumentation.rb:44:in `block in render'
+  /usr/lib/ruby/vendor_ruby/action_controller/metal/instrumentation.rb:87:in `cleanup_view_runtime'
+  /usr/lib/ruby/vendor_ruby/active_record/railties/controller_runtime.rb:25:in `cleanup_view_runtime'
+  /usr/lib/ruby/vendor_ruby/action_controller/metal/instrumentation.rb:43:in `render'
+  /usr/lib/ruby/vendor_ruby/action_controller/metal/implicit_render.rb:10:in `default_render'
+  /usr/lib/ruby/vendor_ruby/action_controller/metal/implicit_render.rb:5:in `send_action'
+  /usr/lib/ruby/vendor_ruby/abstract_controller/base.rb:198:in `process_action'
+  /usr/lib/ruby/vendor_ruby/action_controller/metal/rendering.rb:10:in `process_action'
+  /usr/lib/ruby/vendor_ruby/abstract_controller/callbacks.rb:20:in `block in process_action'
+  /usr/lib/ruby/vendor_ruby/active_support/callbacks.rb:117:in `call'
+  /usr/lib/ruby/vendor_ruby/active_support/callbacks.rb:555:in `block (2 levels) in compile'
+  /usr/lib/ruby/vendor_ruby/active_support/callbacks.rb:505:in `call'
+  /usr/lib/ruby/vendor_ruby/active_support/callbacks.rb:92:in `__run_callbacks__'
+  /usr/lib/ruby/vendor_ruby/active_support/callbacks.rb:778:in `_run_process_action_callbacks'
+  /usr/lib/ruby/vendor_ruby/active_support/callbacks.rb:81:in `run_callbacks'
+  /usr/lib/ruby/vendor_ruby/abstract_controller/callbacks.rb:19:in `process_action'
+  /usr/lib/ruby/vendor_ruby/action_controller/metal/rescue.rb:29:in `process_action'
+  /usr/lib/ruby/vendor_ruby/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+  /usr/lib/ruby/vendor_ruby/active_support/notifications.rb:164:in `block in instrument'
+  /usr/lib/ruby/vendor_ruby/active_support/notifications/instrumenter.rb:20:in `instrument'
+  /usr/lib/ruby/vendor_ruby/active_support/notifications.rb:164:in `instrument'
+  /usr/lib/ruby/vendor_ruby/action_controller/metal/instrumentation.rb:30:in `process_action'
+  /usr/lib/ruby/vendor_ruby/action_controller/metal/params_wrapper.rb:250:in `process_action'
+  /usr/lib/ruby/vendor_ruby/active_record/railties/controller_runtime.rb:18:in `process_action'
+  /usr/lib/ruby/vendor_ruby/abstract_controller/base.rb:137:in `process'
+  /usr/lib/ruby/vendor_ruby/action_view/rendering.rb:30:in `process'
+  /usr/lib/ruby/vendor_ruby/action_controller/metal.rb:196:in `dispatch'
+  /usr/lib/ruby/vendor_ruby/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  /usr/lib/ruby/vendor_ruby/action_controller/metal.rb:237:in `block in action'
+  /usr/lib/ruby/vendor_ruby/action_dispatch/routing/route_set.rb:74:in `dispatch'
+  /usr/lib/ruby/vendor_ruby/action_dispatch/routing/route_set.rb:43:in `serve'
+  /usr/lib/ruby/vendor_ruby/action_dispatch/journey/router.rb:43:in `block in serve'
+  /usr/lib/ruby/vendor_ruby/action_dispatch/journey/router.rb:30:in `each'
+  /usr/lib/ruby/vendor_ruby/action_dispatch/journey/router.rb:30:in `serve'
+  /usr/lib/ruby/vendor_ruby/action_dispatch/routing/route_set.rb:817:in `call'
+  rack (1.6.13) lib/rack/etag.rb:24:in `call'
+  rack (1.6.13) lib/rack/conditionalget.rb:25:in `call'
+  rack (1.6.13) lib/rack/head.rb:13:in `call'
+  /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/params_parser.rb:27:in `call'
+  /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/flash.rb:260:in `call'
+  rack (1.6.13) lib/rack/session/abstract/id.rb:252:in `context'
+  rack (1.6.13) lib/rack/session/abstract/id.rb:247:in `call'
+  /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/cookies.rb:560:in `call'
+  /usr/lib/ruby/vendor_ruby/active_record/query_cache.rb:36:in `call'
+  /usr/lib/ruby/vendor_ruby/active_record/connection_adapters/abstract/connection_pool.rb:653:in `call'
+  /usr/lib/ruby/vendor_ruby/active_record/migration.rb:377:in `call'
+  /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  /usr/lib/ruby/vendor_ruby/active_support/callbacks.rb:88:in `__run_callbacks__'
+  /usr/lib/ruby/vendor_ruby/active_support/callbacks.rb:778:in `_run_call_callbacks'
+  /usr/lib/ruby/vendor_ruby/active_support/callbacks.rb:81:in `run_callbacks'
+  /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/callbacks.rb:27:in `call'
+  /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/reloader.rb:73:in `call'
+  /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/remote_ip.rb:78:in `call'
+  /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  /usr/lib/ruby/vendor_ruby/rails/rack/logger.rb:38:in `call_app'
+  /usr/lib/ruby/vendor_ruby/rails/rack/logger.rb:20:in `block in call'
+  /usr/lib/ruby/vendor_ruby/active_support/tagged_logging.rb:68:in `block in tagged'
+  /usr/lib/ruby/vendor_ruby/active_support/tagged_logging.rb:26:in `tagged'
+  /usr/lib/ruby/vendor_ruby/active_support/tagged_logging.rb:68:in `tagged'
+  /usr/lib/ruby/vendor_ruby/rails/rack/logger.rb:20:in `call'
+  /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.13) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.13) lib/rack/runtime.rb:18:in `call'
+  /usr/lib/ruby/vendor_ruby/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.13) lib/rack/lock.rb:17:in `call'
+  /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.13) lib/rack/sendfile.rb:113:in `call'
+  /usr/lib/ruby/vendor_ruby/rails/engine.rb:518:in `call'
+  /usr/lib/ruby/vendor_ruby/rails/application.rb:165:in `call'
+  rack (1.6.13) lib/rack/lock.rb:17:in `call'
+  rack (1.6.13) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.13) lib/rack/handler/webrick.rb:88:in `service'
+  /usr/lib/ruby/2.3.0/webrick/httpserver.rb:140:in `service'
+  /usr/lib/ruby/2.3.0/webrick/httpserver.rb:96:in `run'
+  /usr/lib/ruby/2.3.0/webrick/server.rb:296:in `block in start_thread'
+
+
+  Rendered /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/templates/rescues/_source.erb (10.7ms)
+  Rendered /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.3ms)
+  Rendered /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/templates/rescues/missing_template.html.erb within rescues/layout (33.4ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.6ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.8ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.7ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.6ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (27.7ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.7ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (48.8ms)
+
+
+Started GET "/schools/1/staffs/new" for 127.0.0.1 at 2021-02-24 14:25:20 +0530
+Processing by StaffsController#new as HTML
+  Parameters: {"school_id"=>"1"}
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms)
+
+ActionView::MissingTemplate (Missing template staffs/new, application/new with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:erb, :builder, :raw, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/home/vinoth/Desktop/vinoth/interview/interview_app/app/views"
+):
+  /usr/lib/ruby/vendor_ruby/action_view/path_set.rb:46:in `find'
+  /usr/lib/ruby/vendor_ruby/action_view/lookup_context.rb:121:in `find'
+  /usr/lib/ruby/vendor_ruby/action_view/renderer/abstract_renderer.rb:18:in `find_template'
+  /usr/lib/ruby/vendor_ruby/action_view/renderer/template_renderer.rb:40:in `determine_template'
+  /usr/lib/ruby/vendor_ruby/action_view/renderer/template_renderer.rb:8:in `render'
+  /usr/lib/ruby/vendor_ruby/action_view/renderer/renderer.rb:46:in `render_template'
+  /usr/lib/ruby/vendor_ruby/action_view/renderer/renderer.rb:27:in `render'
+  /usr/lib/ruby/vendor_ruby/action_view/rendering.rb:100:in `_render_template'
+  /usr/lib/ruby/vendor_ruby/action_controller/metal/streaming.rb:217:in `_render_template'
+  /usr/lib/ruby/vendor_ruby/action_view/rendering.rb:83:in `render_to_body'
+  /usr/lib/ruby/vendor_ruby/action_controller/metal/rendering.rb:32:in `render_to_body'
+  /usr/lib/ruby/vendor_ruby/action_controller/metal/renderers.rb:37:in `render_to_body'
+  /usr/lib/ruby/vendor_ruby/abstract_controller/rendering.rb:25:in `render'
+  /usr/lib/ruby/vendor_ruby/action_controller/metal/rendering.rb:16:in `render'
+  /usr/lib/ruby/vendor_ruby/action_controller/metal/instrumentation.rb:44:in `block (2 levels) in render'
+  /usr/lib/ruby/vendor_ruby/active_support/core_ext/benchmark.rb:12:in `block in ms'
+  /usr/lib/ruby/2.3.0/benchmark.rb:308:in `realtime'
+  /usr/lib/ruby/vendor_ruby/active_support/core_ext/benchmark.rb:12:in `ms'
+  /usr/lib/ruby/vendor_ruby/action_controller/metal/instrumentation.rb:44:in `block in render'
+  /usr/lib/ruby/vendor_ruby/action_controller/metal/instrumentation.rb:87:in `cleanup_view_runtime'
+  /usr/lib/ruby/vendor_ruby/active_record/railties/controller_runtime.rb:25:in `cleanup_view_runtime'
+  /usr/lib/ruby/vendor_ruby/action_controller/metal/instrumentation.rb:43:in `render'
+  /usr/lib/ruby/vendor_ruby/action_controller/metal/implicit_render.rb:10:in `default_render'
+  /usr/lib/ruby/vendor_ruby/action_controller/metal/implicit_render.rb:5:in `send_action'
+  /usr/lib/ruby/vendor_ruby/abstract_controller/base.rb:198:in `process_action'
+  /usr/lib/ruby/vendor_ruby/action_controller/metal/rendering.rb:10:in `process_action'
+  /usr/lib/ruby/vendor_ruby/abstract_controller/callbacks.rb:20:in `block in process_action'
+  /usr/lib/ruby/vendor_ruby/active_support/callbacks.rb:117:in `call'
+  /usr/lib/ruby/vendor_ruby/active_support/callbacks.rb:555:in `block (2 levels) in compile'
+  /usr/lib/ruby/vendor_ruby/active_support/callbacks.rb:505:in `call'
+  /usr/lib/ruby/vendor_ruby/active_support/callbacks.rb:92:in `__run_callbacks__'
+  /usr/lib/ruby/vendor_ruby/active_support/callbacks.rb:778:in `_run_process_action_callbacks'
+  /usr/lib/ruby/vendor_ruby/active_support/callbacks.rb:81:in `run_callbacks'
+  /usr/lib/ruby/vendor_ruby/abstract_controller/callbacks.rb:19:in `process_action'
+  /usr/lib/ruby/vendor_ruby/action_controller/metal/rescue.rb:29:in `process_action'
+  /usr/lib/ruby/vendor_ruby/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+  /usr/lib/ruby/vendor_ruby/active_support/notifications.rb:164:in `block in instrument'
+  /usr/lib/ruby/vendor_ruby/active_support/notifications/instrumenter.rb:20:in `instrument'
+  /usr/lib/ruby/vendor_ruby/active_support/notifications.rb:164:in `instrument'
+  /usr/lib/ruby/vendor_ruby/action_controller/metal/instrumentation.rb:30:in `process_action'
+  /usr/lib/ruby/vendor_ruby/action_controller/metal/params_wrapper.rb:250:in `process_action'
+  /usr/lib/ruby/vendor_ruby/active_record/railties/controller_runtime.rb:18:in `process_action'
+  /usr/lib/ruby/vendor_ruby/abstract_controller/base.rb:137:in `process'
+  /usr/lib/ruby/vendor_ruby/action_view/rendering.rb:30:in `process'
+  /usr/lib/ruby/vendor_ruby/action_controller/metal.rb:196:in `dispatch'
+  /usr/lib/ruby/vendor_ruby/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  /usr/lib/ruby/vendor_ruby/action_controller/metal.rb:237:in `block in action'
+  /usr/lib/ruby/vendor_ruby/action_dispatch/routing/route_set.rb:74:in `dispatch'
+  /usr/lib/ruby/vendor_ruby/action_dispatch/routing/route_set.rb:43:in `serve'
+  /usr/lib/ruby/vendor_ruby/action_dispatch/journey/router.rb:43:in `block in serve'
+  /usr/lib/ruby/vendor_ruby/action_dispatch/journey/router.rb:30:in `each'
+  /usr/lib/ruby/vendor_ruby/action_dispatch/journey/router.rb:30:in `serve'
+  /usr/lib/ruby/vendor_ruby/action_dispatch/routing/route_set.rb:817:in `call'
+  rack (1.6.13) lib/rack/etag.rb:24:in `call'
+  rack (1.6.13) lib/rack/conditionalget.rb:25:in `call'
+  rack (1.6.13) lib/rack/head.rb:13:in `call'
+  /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/params_parser.rb:27:in `call'
+  /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/flash.rb:260:in `call'
+  rack (1.6.13) lib/rack/session/abstract/id.rb:252:in `context'
+  rack (1.6.13) lib/rack/session/abstract/id.rb:247:in `call'
+  /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/cookies.rb:560:in `call'
+  /usr/lib/ruby/vendor_ruby/active_record/query_cache.rb:36:in `call'
+  /usr/lib/ruby/vendor_ruby/active_record/connection_adapters/abstract/connection_pool.rb:653:in `call'
+  /usr/lib/ruby/vendor_ruby/active_record/migration.rb:377:in `call'
+  /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  /usr/lib/ruby/vendor_ruby/active_support/callbacks.rb:88:in `__run_callbacks__'
+  /usr/lib/ruby/vendor_ruby/active_support/callbacks.rb:778:in `_run_call_callbacks'
+  /usr/lib/ruby/vendor_ruby/active_support/callbacks.rb:81:in `run_callbacks'
+  /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/callbacks.rb:27:in `call'
+  /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/reloader.rb:73:in `call'
+  /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/remote_ip.rb:78:in `call'
+  /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  /usr/lib/ruby/vendor_ruby/rails/rack/logger.rb:38:in `call_app'
+  /usr/lib/ruby/vendor_ruby/rails/rack/logger.rb:20:in `block in call'
+  /usr/lib/ruby/vendor_ruby/active_support/tagged_logging.rb:68:in `block in tagged'
+  /usr/lib/ruby/vendor_ruby/active_support/tagged_logging.rb:26:in `tagged'
+  /usr/lib/ruby/vendor_ruby/active_support/tagged_logging.rb:68:in `tagged'
+  /usr/lib/ruby/vendor_ruby/rails/rack/logger.rb:20:in `call'
+  /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.13) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.13) lib/rack/runtime.rb:18:in `call'
+  /usr/lib/ruby/vendor_ruby/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.13) lib/rack/lock.rb:17:in `call'
+  /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.13) lib/rack/sendfile.rb:113:in `call'
+  /usr/lib/ruby/vendor_ruby/rails/engine.rb:518:in `call'
+  /usr/lib/ruby/vendor_ruby/rails/application.rb:165:in `call'
+  rack (1.6.13) lib/rack/lock.rb:17:in `call'
+  rack (1.6.13) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.13) lib/rack/handler/webrick.rb:88:in `service'
+  /usr/lib/ruby/2.3.0/webrick/httpserver.rb:140:in `service'
+  /usr/lib/ruby/2.3.0/webrick/httpserver.rb:96:in `run'
+  /usr/lib/ruby/2.3.0/webrick/server.rb:296:in `block in start_thread'
+
+
+  Rendered /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/templates/rescues/_source.erb (8.5ms)
+  Rendered /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.4ms)
+  Rendered /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/templates/rescues/missing_template.html.erb within rescues/layout (30.0ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.9ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.6ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (20.8ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (42.0ms)
+
+
+Started GET "/schools/1/staffs/new" for 127.0.0.1 at 2021-02-24 14:26:37 +0530
+Processing by StaffsController#new as HTML
+  Parameters: {"school_id"=>"1"}
+  Rendered staffs/new.html.erb within layouts/application (40.3ms)
+Completed 500 Internal Server Error in 43ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error (undefined method `staffs_path' for #<#<Class:0x007fc1917896c8>:0x007fc191d49b58>):
+    1: <%= form_for(@staff) do |f| %>
+    2: <%= hidden_field_tag "staff[school_id]",params[:school_id] %>
+    3: <table>
+    4:   <tr>
+  app/views/staffs/new.html.erb:1:in `_app_views_staffs_new_html_erb___815662484842132456_70234675990740'
+
+
+  Rendered /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/templates/rescues/_source.erb (9.4ms)
+  Rendered /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.9ms)
+  Rendered /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (29.7ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (1.2ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.7ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (21.8ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (59.1ms)
+
+
+Started GET "/schools/1/staffs/new" for 127.0.0.1 at 2021-02-24 14:28:00 +0530
+Processing by StaffsController#new as HTML
+  Parameters: {"school_id"=>"1"}
+  Rendered staffs/new.html.erb within layouts/application (2.4ms)
+Completed 500 Internal Server Error in 18ms (ActiveRecord: 0.8ms)
+
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+    1: <%= form_for(@sta) do |f| %>
+    2: <%= hidden_field_tag "staff[school_id]",params[:school_id] %>
+    3: <table>
+    4:   <tr>
+  app/views/staffs/new.html.erb:1:in `_app_views_staffs_new_html_erb___815662484842132456_70234682214000'
+
+
+  Rendered /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/templates/rescues/_source.erb (8.3ms)
+  Rendered /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/templates/rescues/_trace.html.erb (8.8ms)
+  Rendered /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.7ms)
+  Rendered /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (36.1ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.7ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (21.1ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.6ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (42.0ms)
+
+
+Started GET "/schools/1/staffs/new" for 127.0.0.1 at 2021-02-24 14:28:16 +0530
+Processing by StaffsController#new as HTML
+  Parameters: {"school_id"=>"1"}
+  Rendered staffs/new.html.erb within layouts/application (43.3ms)
+Completed 500 Internal Server Error in 46ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error (undefined local variable or method `f' for #<#<Class:0x007fc19295a578>:0x007fc192aa6f30>):
+    4:   <tr>
+    5:     <td><label>Name</label></td>
+    6: 
+    7:     <td><%= f.text_field :name %></td>
+    8:   </tr>
+    9:     <tr>
+   10:     <td><label>Position</label></td>
+  app/views/staffs/new.html.erb:7:in `_app_views_staffs_new_html_erb___815662484842132456_70234683026960'
+
+
+  Rendered /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/templates/rescues/_source.erb (7.9ms)
+  Rendered /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.5ms)
+  Rendered /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (26.9ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.6ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.6ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (20.2ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (39.8ms)
+
+
+Started GET "/schools/1/staffs/new" for 127.0.0.1 at 2021-02-24 14:28:38 +0530
+Processing by StaffsController#new as HTML
+  Parameters: {"school_id"=>"1"}
+  Rendered staffs/new.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 302ms (Views: 300.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/staffs.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2021-02-24 14:28:39 +0530
+
+
+Started GET "/assets/standards.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2021-02-24 14:28:39 +0530
+
+
+Started GET "/assets/standards.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2021-02-24 14:28:39 +0530
+
+
+Started GET "/assets/staffs.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2021-02-24 14:28:39 +0530
+
+
+Started GET "/assets/schools.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2021-02-24 14:28:39 +0530
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2021-02-24 14:28:39 +0530
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for 127.0.0.1 at 2021-02-24 14:28:39 +0530
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for 127.0.0.1 at 2021-02-24 14:28:39 +0530
+
+
+Started GET "/assets/turbolinks.self-569ee74eaa15c1e2019317ff770b8769b1ec033a0f572a485f64c82ddc8f989e.js?body=1" for 127.0.0.1 at 2021-02-24 14:28:39 +0530
+
+
+Started GET "/schools/1/staffs/new" for 127.0.0.1 at 2021-02-24 14:29:54 +0530
+Processing by StaffsController#new as HTML
+  Parameters: {"school_id"=>"1"}
+  Rendered staffs/new.html.erb within layouts/application (43.2ms)
+Completed 500 Internal Server Error in 59ms (ActiveRecord: 1.1ms)
+
+ActionView::Template::Error (undefined method `staffs_path' for #<#<Class:0x007fc19298ce60>:0x007fc192968e98>):
+    1: <%= form_for(@staff) do |f| %>
+    2: <%= hidden_field_tag "staff[school_id]",params[:school_id] %>
+    3: <table>
+    4:   <tr>
+  app/views/staffs/new.html.erb:1:in `_app_views_staffs_new_html_erb___815662484842132456_70234680819080'
+
+
+  Rendered /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/templates/rescues/_source.erb (9.5ms)
+  Rendered /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.8ms)
+  Rendered /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (32.0ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.7ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.6ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (20.2ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.7ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (40.9ms)
+
+
+Started GET "/schools/1/staffs/new" for 127.0.0.1 at 2021-02-24 14:31:46 +0530
+Processing by StaffsController#new as HTML
+  Parameters: {"school_id"=>"1"}
+  Rendered staffs/new.html.erb within layouts/application (107.9ms)
+Completed 500 Internal Server Error in 719ms (ActiveRecord: 120.4ms)
+
+ActionView::Template::Error (undefined method `staffs_path' for #<#<Class:0x007fc1913dc390>:0x007fc1913b2a90>):
+    1: <%= form_for(@staff) do |f| %>
+    2: <%= hidden_field_tag "staff[school_id]",params[:school_id] %>
+    3: <table>
+    4:   <tr>
+  app/views/staffs/new.html.erb:1:in `_app_views_staffs_new_html_erb___815662484842132456_70234680819080'
+
+
+  Rendered /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/templates/rescues/_source.erb (9.0ms)
+  Rendered /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.6ms)
+  Rendered /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (32.2ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.9ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.7ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.6ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (40.8ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.6ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (87.0ms)
+
+
+Started GET "/schools/1/staffs/new" for 127.0.0.1 at 2021-02-24 14:33:57 +0530
+Processing by StaffsController#new as HTML
+  Parameters: {"school_id"=>"1"}
+  Rendered staffs/new.html.erb within layouts/application (31.1ms)
+Completed 500 Internal Server Error in 46ms (ActiveRecord: 0.7ms)
+
+ActionView::Template::Error (undefined method `staffs_path' for #<#<Class:0x007fc192537f68>:0x007fc192533d28>):
+    1: <%= form_for(@staff) do |f| %>
+    2: <%= hidden_field_tag "staff[school_id]",params[:school_id] %>
+    3: <table>
+    4:   <tr>
+  app/views/staffs/new.html.erb:1:in `_app_views_staffs_new_html_erb___815662484842132456_70234680819080'
+
+
+  Rendered /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/templates/rescues/_source.erb (9.0ms)
+  Rendered /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.3ms)
+  Rendered /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.9ms)
+  Rendered /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (28.8ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.6ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.8ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (21.0ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (41.4ms)
+
+
+Started GET "/schools/1/staffs/new" for 127.0.0.1 at 2021-02-24 14:35:07 +0530
+Processing by StaffsController#new as HTML
+  Parameters: {"school_id"=>"1"}
+  Rendered staffs/new.html.erb within layouts/application (35.6ms)
+Completed 500 Internal Server Error in 39ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error (undefined method `staffs_path' for #<#<Class:0x007fc192537f68>:0x007fc1925fa090>):
+    1: <%= form_for(@staff) do |f| %>
+    2: <%= hidden_field_tag "staff[school_id]",params[:school_id] %>
+    3: <table>
+    4:   <tr>
+  app/views/staffs/new.html.erb:1:in `_app_views_staffs_new_html_erb___815662484842132456_70234680819080'
+
+
+  Rendered /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/templates/rescues/_source.erb (9.6ms)
+  Rendered /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.5ms)
+  Rendered /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (29.9ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.6ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (21.1ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.8ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (41.8ms)
+
+
+Started GET "/schools/1/standards/new" for 127.0.0.1 at 2021-02-24 14:35:19 +0530
+Processing by StandardsController#new as HTML
+  Parameters: {"school_id"=>"1"}
+  Rendered standards/new.html.erb within layouts/application (50.9ms)
+Completed 500 Internal Server Error in 130ms (ActiveRecord: 0.3ms)
+
+ActionView::Template::Error (undefined method `standards_path' for #<#<Class:0x007fc192ab6e08>:0x007fc1923eee40>):
+    1: <%= form_for @standard do |f| %>
+    2: <%= hidden_field_tag "standard[school_id]",params[:school_id] %>
+    3: <table>
+    4:   <tr>
+  app/views/standards/new.html.erb:1:in `_app_views_standards_new_html_erb___4285384368482385046_70234679504280'
+
+
+  Rendered /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/templates/rescues/_source.erb (9.0ms)
+  Rendered /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.3ms)
+  Rendered /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (29.1ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.7ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.7ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.7ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (21.8ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (43.1ms)
+  [1m[36m (0.3ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (493.5ms)[0m  INSERT INTO "standards" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "first"], ["created_at", "2021-02-24 09:20:22.052279"], ["updated_at", "2021-02-24 09:20:22.052279"]]
+  [1m[36m (186.3ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "standards" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "first"], ["created_at", "2021-02-24 09:20:30.539098"], ["updated_at", "2021-02-24 09:20:30.539098"]]
+  [1m[35m (130.9ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  UPDATE "standards" SET "school_id" = ?, "updated_at" = ? WHERE "standards"."id" = ?  [["school_id", 1], ["updated_at", "2021-02-24 09:20:47.331163"], ["id", 2]]
+  [1m[36m (135.1ms)[0m  [1mcommit transaction[0m
+
+
+Started GET "/schools/1/standards/1" for 127.0.0.1 at 2021-02-24 14:50:54 +0530
+Processing by StandardsController#show as HTML
+  Parameters: {"school_id"=>"1", "id"=>"1"}
+  [1m[36mStandard Load (0.4ms)[0m  [1mSELECT  "standards".* FROM "standards" WHERE "standards"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered standards/show.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 268ms (Views: 265.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/schools/1/standards" for 127.0.0.1 at 2021-02-24 14:51:06 +0530
+Processing by StandardsController#index as HTML
+  Parameters: {"school_id"=>"1"}
+  [1m[35mStandard Load (0.5ms)[0m  SELECT "standards".* FROM "standards"
+  Rendered standards/index.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 35ms (Views: 33.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/schools/1/standards" for 127.0.0.1 at 2021-02-24 14:51:45 +0530
+Processing by StandardsController#index as HTML
+  Parameters: {"school_id"=>"1"}
+  [1m[36mStandard Load (0.3ms)[0m  [1mSELECT "standards".* FROM "standards"[0m
+  Rendered standards/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 34ms (Views: 32.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for 127.0.0.1 at 2021-02-24 14:51:45 +0530
+
+
+Started GET "/assets/schools.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2021-02-24 14:51:45 +0530
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for 127.0.0.1 at 2021-02-24 14:51:45 +0530
+
+
+Started GET "/assets/turbolinks.self-569ee74eaa15c1e2019317ff770b8769b1ec033a0f572a485f64c82ddc8f989e.js?body=1" for 127.0.0.1 at 2021-02-24 14:51:45 +0530
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2021-02-24 14:51:45 +0530
+
+
+Started GET "/assets/staffs.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2021-02-24 14:51:45 +0530
+
+
+Started GET "/assets/standards.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2021-02-24 14:51:45 +0530
+
+
+Started GET "/schools/1/standards/edit" for 127.0.0.1 at 2021-02-24 14:52:28 +0530
+Processing by StandardsController#show as HTML
+  Parameters: {"school_id"=>"1", "id"=>"edit"}
+  [1m[35mStandard Load (1.4ms)[0m  SELECT  "standards".* FROM "standards" WHERE "standards"."id" = ? LIMIT 1  [["id", 0]]
+Completed 404 Not Found in 4ms (ActiveRecord: 1.4ms)
+
+ActiveRecord::RecordNotFound (Couldn't find Standard with 'id'=edit):
+  app/controllers/standards_controller.rb:18:in `show'
+
+
+  Rendered /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/templates/rescues/_source.erb (11.3ms)
+  Rendered /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.1ms)
+  Rendered /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (39.4ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (1.0ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.8ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (1.0ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (1.0ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (29.7ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.8ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.9ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (59.6ms)
+
+
+Started GET "/schools/1/standards/1/edit" for 127.0.0.1 at 2021-02-24 14:52:42 +0530
+Processing by StandardsController#edit as HTML
+  Parameters: {"school_id"=>"1", "id"=>"1"}
+  [1m[36mStandard Load (0.2ms)[0m  [1mSELECT  "standards".* FROM "standards" WHERE "standards"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered standards/edit.html.erb within layouts/application (44.6ms)
+Completed 500 Internal Server Error in 49ms (ActiveRecord: 0.2ms)
+
+ActionView::Template::Error (undefined method `standard_path' for #<#<Class:0x007fc192ab6e08>:0x007fc192587720>):
+    1: <%= form_for :standard, url: standard_path(@standard), method: :patch do |f| %>
+    2: <%= hidden_field_tag "standard[school_id]",params[:school_id] %>
+    3: <table>
+    4:   <tr>
+  app/views/standards/edit.html.erb:1:in `_app_views_standards_edit_html_erb__485576615429713339_70234680340940'
+
+
+  Rendered /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/templates/rescues/_source.erb (9.1ms)
+  Rendered /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.1ms)
+  Rendered /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (29.9ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.6ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.7ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.8ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (23.1ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.6ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (43.8ms)
+  [1m[35mStaff Load (0.4ms)[0m  SELECT  "staffs".* FROM "staffs"  ORDER BY "staffs"."id" DESC LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "staffs" ("name", "position", "school_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["name", "vinoth"], ["position", "Teacher"], ["school_id", 1], ["created_at", "2021-02-24 09:24:17.739841"], ["updated_at", "2021-02-24 09:24:17.739841"]]
+  [1m[36m (110.7ms)[0m  [1mcommit transaction[0m
+
+
+Started GET "/schools/1/staffs" for 127.0.0.1 at 2021-02-24 14:54:27 +0530
+Processing by StaffsController#index as HTML
+  Parameters: {"school_id"=>"1"}
+  [1m[35mStaff Load (0.3ms)[0m  SELECT "staffs".* FROM "staffs"
+  Rendered staffs/index.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 33ms (Views: 32.0ms | ActiveRecord: 0.3ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateSections (20210224092944)
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (0.5ms)[0m  [1mCREATE TABLE "sections" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "standard_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (0.2ms)[0m  [1mCREATE  INDEX "index_sections_on_standard_id" ON "sections" ("standard_id")[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20210224092944"]]
+  [1m[36m (133.6ms)[0m  [1mcommit transaction[0m
+Migrating to CreateStudents (20210224092956)
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (0.7ms)[0m  [1mCREATE TABLE "students" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "first_name" varchar, "last_name" varchar, "date_of_birth" datetime, "phone_no" varchar, "section_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.3ms)[0m  CREATE  INDEX "index_students_on_section_id" ON "students" ("section_id")
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20210224092956"]]
+  [1m[35m (116.7ms)[0m  commit transaction
+Migrating to CreateSubjects (20210224093156)
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.6ms)[0m  CREATE TABLE "subjects" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "student_id" integer, "staff_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.2ms)[0m  [1mCREATE  INDEX "index_subjects_on_student_id" ON "subjects" ("student_id")[0m
+  [1m[35m (0.3ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_subjects_on_student_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_subjects_on_student_id' AND type='index'
+
+  [1m[36m (0.3ms)[0m  [1mCREATE  INDEX "index_subjects_on_staff_id" ON "subjects" ("staff_id")[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20210224093156"]]
+  [1m[36m (137.5ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.2ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_sections_on_standard_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_sections_on_standard_id' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_staffs_on_school_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_staffs_on_school_id' AND type='index'
+
+  [1m[36m (0.2ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_standards_on_school_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_standards_on_school_id' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_students_on_section_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_students_on_section_id' AND type='index'
+
+  [1m[36m (0.2ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_subjects_on_staff_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_subjects_on_staff_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_subjects_on_student_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_subjects_on_student_id' AND type='index'
+
